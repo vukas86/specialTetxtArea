@@ -119,3 +119,36 @@ body {
 .hidden {
   display: none;
 }
+
+.btn-2 {
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+}
+
+.btn-2 span {
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+}
+
+.btn-2:hover {
+  box-shadow: 7px 7px 20px #666262, -7px -7px 20px #8f8383;
+  transform: translateY(-2px);
+}
+
+.btn-2:hover > span {
+  margin-right: 10px;
+}
+
+.btn-2:active {
+  transform: translateX(-2px);
+}

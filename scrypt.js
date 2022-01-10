@@ -7,8 +7,16 @@ const containerElement = document.querySelector(".container");
 const msgElement = document.createElement("p");
 msgElement.classList.add("text");
 
+const btn2Element = document.querySelector(".btn-2");
+
 textAreaElement.addEventListener("keydown", count);
 buttonElement.addEventListener("click", displayMessage);
+
+btn2Element.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("hello");
+  window.location.reload();
+});
 
 function count(e) {
   let num = textAreaElement.value.length;
@@ -38,6 +46,7 @@ function count(e) {
 function displayMessage(e) {
   e.preventDefault();
   containerElement.style.visibility = "hidden";
-  msgElement.textContent = `Your message: "${textAreaElement.value}" is succesfully submited!`;
+  msgElement.textContent = `Your message: "${textAreaElement.value}"is succesfully submited!`;
   document.body.prepend(msgElement);
+  btn2Element.classList.remove("hidden");
 }
