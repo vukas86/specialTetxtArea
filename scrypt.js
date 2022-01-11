@@ -46,7 +46,12 @@ function count(e) {
 function displayMessage(e) {
   e.preventDefault();
   containerElement.style.visibility = "hidden";
-  msgElement.textContent = `Your message: "${textAreaElement.value}"is succesfully submited!`;
   document.body.prepend(msgElement);
   btn2Element.classList.remove("hidden");
+  if (textAreaElement.value === "") {
+    console.log("yep");
+    msgElement.textContent = `The message can not be empty!`;
+  } else {
+    msgElement.textContent = `Your message: "${textAreaElement.value}" is succesfully submited!`;
+  }
 }

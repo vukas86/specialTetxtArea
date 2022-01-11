@@ -29,13 +29,14 @@ body {
 }
 
 .container h1 {
+  display: flex;
   border: 2px solid white;
   border-bottom: none;
   padding: 13px;
   background-color: blue;
   color: wheat;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 0 0 3px 3px;
+  border-radius: 3px 3px 0 0;
 }
 
 .container form {
@@ -151,4 +152,14 @@ body {
 
 .btn-2:active {
   transform: translateX(-2px);
+}
+
+@media only screen and (max-width: 320px) {
+  .container h1 {
+    padding: 8px;
+  }
+  .btn-2 {
+    top: 55%;
+    right: 36%;
+  }
 }
