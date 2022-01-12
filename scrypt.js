@@ -6,18 +6,11 @@ const buttonElement = document.querySelector("#btn");
 const containerElement = document.querySelector(".container");
 const msgElement = document.createElement("p");
 const maxLengthElement = progressElement.getAttribute("max");
-console.log(maxLengthElement);
-msgElement.classList.add("text");
-
 const btn2Element = document.querySelector(".btn-2");
 
+msgElement.classList.add("text");
+
 textAreaElement.addEventListener("keydown", count);
-textAreaElement.addEventListener("keydown", function (e) {
-  console.log(e.keyCode);
-  if (e.keyCode === 8 || e.keyCode === 13) {
-    return false;
-  }
-});
 
 buttonElement.addEventListener("click", displayMessage);
 
@@ -29,13 +22,16 @@ btn2Element.addEventListener("click", (e) => {
 
 function count(e) {
   let num = textAreaElement.value.length;
-  let valueElement = textAreaElement.value;
-  let remainingValue = 40 - num;
+
+  if (e.keyCode === 8 || e.keyCode === 46) {
+    console.log("jo");
+    num = textAreaElement.value.length - 1;
+  } else {
+    num = textAreaElement.value.length + 1;
+  }
+
   console.log(num);
 
-  console.log(valueElement);
-
-  if (!!valueElement) console.log(valueElement);
   progressElement.setAttribute("value", `${num}`);
 
   if (num > 30) {
