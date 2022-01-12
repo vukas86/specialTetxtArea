@@ -42,14 +42,16 @@ body {
 .container form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   background-color: white;
   padding: 10px;
   border: 2px solid white;
   border-top: none;
   border-radius: 0 0 3px 3px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  /* height: 325px; */
+}
+
+textarea::selection {
+  background-color: transparent;
 }
 
 .container form textarea {
@@ -60,7 +62,6 @@ body {
   padding: 5px;
   color: white;
   background-color: yellow;
-
   cursor: pointer;
 }
 
@@ -154,12 +155,15 @@ body {
   transform: translateX(-2px);
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   .container h1 {
-    padding: 8px;
+    padding: 11px;
   }
   .btn-2 {
     top: 55%;
-    right: 36%;
+    right: 30%;
+  }
+  .text {
+    font-size: 27px;
   }
 }
