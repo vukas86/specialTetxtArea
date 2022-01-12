@@ -24,15 +24,12 @@ function count(e) {
   let num = textAreaElement.value.length;
 
   if (e.keyCode === 8 || e.keyCode === 46) {
-    console.log("jo");
     num = textAreaElement.value.length - 1;
   } else {
     num = textAreaElement.value.length + 1;
   }
 
   console.log(num);
-
-  progressElement.setAttribute("value", `${num}`);
 
   if (num > 30) {
     warningElement.classList.remove("hidden");
@@ -53,6 +50,7 @@ function count(e) {
     buttonElement.style.background = "";
     errorElement.classList.add("hidden");
   }
+  progressElement.setAttribute("value", `${num}`);
 }
 
 function displayMessage(e) {
