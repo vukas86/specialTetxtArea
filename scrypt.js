@@ -11,6 +11,11 @@ const btn2Element = document.querySelector(".btn-2");
 msgElement.classList.add("text");
 
 textAreaElement.addEventListener("keydown", count);
+textAreaElement.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    buttonElement.click();
+  }
+});
 
 buttonElement.addEventListener("click", displayMessage);
 
