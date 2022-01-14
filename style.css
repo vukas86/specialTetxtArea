@@ -165,5 +165,6 @@ textarea::selection {
   }
   .text {
     font-size: 27px;
+    word-wrap: break-word;
   }
 }
